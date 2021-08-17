@@ -1,0 +1,16 @@
+<!-- <p>{{ total_likes }} Like{{ total_likes|pluralize }}</p>
+{% if request.user.is_authenticated %}
+<form action="{% url 'blog1:like_post' %}" method="post">
+    {% csrf_token %}
+    {% if is_liked %}
+        <button type="submit" id="like" name="post_id" value="{{post.id}}">Dislike</button>
+    {% else %}
+        <button type="submit" id="like" name="post_id" value="{{post.id}}">Like</button>
+    {% endif %}
+     
+</form>
+{% endif %} -->
+
+<P>{{ total_likes }} Like {{ total_likes|pluralize}}</P>
+{% if request.user.is_authenticated %}
+<form action="{% url 'blog1:like_post' %}"

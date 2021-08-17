@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>{{category.name}}</h2>
+        {% for ar in article %}
+        <div class="col col-md-3">
+            <h3>{{ar.title}}</h3>
+            <!-- <img src="{{ar.img.url}}" alt="modimage"> -->
+            <div class="row gx-5">
+                <div class="col">
+                    <div class="p-3 border bg-light">
+                        <h4><a href="{% url 'video:article_detail' ar.slug %}">Click here</a></h4>
+                        <img class="secimg border-info" src="{{c.img.url}}" alt="video">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

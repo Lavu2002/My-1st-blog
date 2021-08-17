@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row py-4">
+        {% for c in categories %}
+        <div class="col-lg col-12 homeimg" id=img1>
+            <div class="row gx-5">
+                <div class="col">
+                    <div class="p-3 border bg-light"><h5><a href="{% url 'video:category_view' c.slug %}">{{c.name}}</a></h5>
+                    <img class="secimg border-info" src="{{c.img.url}}" alt="blog videos"></div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
