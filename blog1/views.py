@@ -14,10 +14,7 @@ def blog1Home(request):
 def blog1Post(request,pk):
     print("check1")
     post= get_object_or_404(Post,pk=pk)
-    is_liked=False
-    if post.likes.filter(id=request.user.id).exists():
-        is_liked = True
-    return render(request,'blog1/blog1Post.html',{'post':post})
+    return render(request,'blog1/blog1Post.html',context={'post':post})
 
 def like_post(request):
     post = get_object_or_404(Post, id=request.POST.get('id'))
