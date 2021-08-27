@@ -17,7 +17,7 @@ def blog1Post(request,pk):
     is_liked=False
     if post.likes.filter(id=request.user.id).exists():
         is_liked = True
-    return render(request,'blog1/blog1Post.html',{'post':post,'is_liked':is_liked,'total_likes':post.total_likes()})
+    return render(request,'blog1/blog1Post.html',{'post':post})
 
 def like_post(request):
     post = get_object_or_404(Post, id=request.POST.get('id'))
